@@ -1,4 +1,5 @@
 import React from 'react';
+import Human from './Human';
 
 const POSTURE_SITTING = 1;
 
@@ -25,14 +26,30 @@ function getRanBottom(position) {
         : LIST_BOTTOM_SITTING[Math.floor(Math.random() * LIST_BOTTOM_SITTING.length)];
 }
 export default function Randomized() {
-    let position = getRandPosition();
+    let pos1 = getRandPosition();
+    let pos2 = getRandPosition();
+    let pos3 = getRandPosition();
 
     return (
         <div className="humans">
-            {position}
-            {getRanHead()}
-            {getRanBody()}
-            {getRanBottom(position)}
+            <Human
+                position={pos1}
+                head={getRanHead()}
+                body={getRanBody()}
+                bottom={getRanBottom(pos1)}
+            />
+            <Human
+                position={pos2}
+                head={getRanHead()}
+                body={getRanBody()}
+                bottom={getRanBottom(pos2)}
+            />
+            <Human
+                position={pos3}
+                head={getRanHead()}
+                body={getRanBody()}
+                bottom={getRanBottom(pos3)}
+            />
         </div>
     );
 }

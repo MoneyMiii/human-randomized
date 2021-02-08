@@ -1,6 +1,12 @@
-### `npm install`
+# Human Randomized
 
-To install modules Then: 
+Made by the Min SUN, Human Randomized gives you 3 illustrations of people with a design library.
+
+## Installation
+
+### `npm install` to install all node modules.
+
+### Get Start
 
 ### `npm start`
 

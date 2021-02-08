@@ -58,10 +58,12 @@ export default function Randomized() {
     }
     return (
         <div className="content">
-            <h1>Create your ows remix</h1>
-            <h2>Change the hairdos, tops, and pants</h2>
-            {randomizedHuman}
+            <h1>Create your own remix</h1>
+            <h3>Change the hairdos, tops, and pants</h3>
             <button onClick={() => setRandHuman(GetHuman())}> Get Random</button>
+            <div className="humaaans">
+                {randomizedHuman}
+            </div>
         </div>
     );
 }

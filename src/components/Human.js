@@ -47,7 +47,7 @@ function setBottomDirectory(position) {
 
 export default function Human({ head, body, bottom, position }) {
 
-    let height = setHeightFromSizeAndPosture(null, position);
+    let height = setHeightFromSizeAndPosture(position);
     let heightAdjustmentFromPosition = setHeightAdjustmentFromPosture(position);
     let viewBox = setViewBox(position);
 

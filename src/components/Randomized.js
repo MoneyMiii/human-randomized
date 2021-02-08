@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Human from './Human';
 
 const POSTURE_SITTING = 1;
@@ -26,30 +26,42 @@ function getRanBottom(position) {
         : LIST_BOTTOM_SITTING[Math.floor(Math.random() * LIST_BOTTOM_SITTING.length)];
 }
 export default function Randomized() {
-    let pos1 = getRandPosition();
-    let pos2 = getRandPosition();
-    let pos3 = getRandPosition();
 
+    const [randomizedHuman, setRandHuman] = useState(null);
+
+    const GetHuman = () => {
+        let pos1 = getRandPosition();
+        let pos2 = getRandPosition();
+        let pos3 = getRandPosition();
+        return (
+            <div className="humans">
+                <Human
+                    position={pos1}
+                    head={getRanHead()}
+                    body={getRanBody()}
+                    bottom={getRanBottom(pos1)}
+                />
+                <Human
+                    position={pos2}
+                    head={getRanHead()}
+                    body={getRanBody()}
+                    bottom={getRanBottom(pos2)}
+                />
+                <Human
+                    position={pos3}
+                    head={getRanHead()}
+                    body={getRanBody()}
+                    bottom={getRanBottom(pos3)}
+                />
+            </div>
+        )
+    }
     return (
-        <div className="humans">
-            <Human
-                position={pos1}
-                head={getRanHead()}
-                body={getRanBody()}
-                bottom={getRanBottom(pos1)}
-            />
-            <Human
-                position={pos2}
-                head={getRanHead()}
-                body={getRanBody()}
-                bottom={getRanBottom(pos2)}
-            />
-            <Human
-                position={pos3}
-                head={getRanHead()}
-                body={getRanBody()}
-                bottom={getRanBottom(pos3)}
-            />
+        <div className="content">
+            <h1>Create your ows remix</h1>
+            <h2>Change the hairdos, tops, and pants</h2>
+            {randomizedHuman}
+            <button onClick={() => setRandHuman(GetHuman())}> Get Random</button>
         </div>
     );
 }

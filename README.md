@@ -1,6 +1,6 @@
 # Human Randomized
 
-Made by the Min SUN, Human Randomized gives you 3 illustrations of people with a design library.
+Made by Min SUN, Human Randomized gives you 3 illustrations of people with a design library.
 
 ## Installation
 
